@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Streakly - Premium Habit Tracker</title>
+<meta name="description" content="Streakly is a premium dark-mode habit tracker with animated streaks, a five-week heatmap and instant progress rings." />
+<meta name="theme-color" content="#05060a" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Streakly home">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">Streakly</span>
+  </a>
+  <nav class="topnav" aria-label="Primary">
+    <a href="#tracker">Tracker</a>
+    <a href="#insights">Insights</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow">Habit system v2.4</p>
+    <h1 id="hero-title">
+      <span class="grad">Build habits</span><br />
+      that actually <span class="grad-warm">stick.</span>
+    </h1>
+    <p class="lede">
+      Track daily rituals, watch your streaks glow, and let the heatmap remind you
+      why consistency beats motivation. Everything is saved right here on your device.
+    </p>
+    <div class="hero-stats" role="list">
+      <div class="stat glass" role="listitem">
+        <span class="stat-num" id="stat-habits">0</span>
+        <span class="stat-label">Active habits</span>
+      </div>
+      <div class="stat glass" role="listitem">
+        <span class="stat-num" id="stat-best">0</span>
+        <span class="stat-label">Best streak</span>
+      </div>
+      <div class="stat glass" role="listitem">
+        <span class="stat-num" id="stat-today">0%</span>
+        <span class="stat-label">Done today</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracker" class="panel glass" aria-labelledby="tracker-title">
+    <div class="panel-head">
+      <div>
+        <h2 id="tracker-title">Today&rsquo;s tracker</h2>
+        <p class="muted" id="today-label">Loading date&hellip;</p>
+      </div>
+      <form class="add-form" id="habit-form" autocomplete="off">
+        <label class="sr-only" for="habit-input">New habit name</label>
+        <input id="habit-input" name="habit" type="text" maxlength="42" placeholder="e.g. Read 20 pages" required />
+        <button type="submit" class="btn btn-primary">Add habit</button>
+      </form>
+    </div>
+
+    <div class="swatches" id="swatches" role="radiogroup" aria-label="Habit accent color"></div>
+
+    <div class="habit-grid" id="habit-grid" aria-live="polite"></div>
+    <p class="empty" id="empty-state">No habits yet &mdash; add your first one above and start a streak today.</p>
+  </section>
+
+  <section id="insights" class="panel glass" aria-labelledby="insights-title">
+    <h2 id="insights-title">Momentum insights</h2>
+    <div class="insight-row">
+      <div class="insight">
+        <span class="insight-k">Completion rate</span>
+        <span class="insight-v grad" id="insight-rate">0%</span>
+        <div class="bar"><span id="bar-rate"></span></div>
+      </div>
+      <div class="insight">
+        <span class="insight-k">Perfect days</span>
+        <span class="insight-v grad-warm" id="insight-perfect">0</span>
+        <div class="bar"><span id="bar-perfect"></span></div>
+      </div>
+      <div class="insight">
+        <span class="insight-k">Total check-ins</span>
+        <span class="insight-v grad-cool" id="insight-total">0</span>
+        <div class="bar"><span id="bar-total"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="panel glass">
+    <h2>About Streakly</h2>
+    <p class="muted">
+      Streakly is a single-page habit tracker built with vanilla HTML, CSS and JavaScript.
+      No accounts, no servers, no tracking &mdash; your data lives in your browser&rsquo;s local storage.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Streakly &middot; built for people who keep showing up.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
